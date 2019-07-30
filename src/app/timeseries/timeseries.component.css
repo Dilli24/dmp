@@ -7,3 +7,13 @@
     cursor: pointer;
 }
 
+
+.vl {
+    border-left: 6px solid green;
+    height: 500px;
+    margin-left: 17px;
+    top: 0;
+  
+  }
+  
+ 

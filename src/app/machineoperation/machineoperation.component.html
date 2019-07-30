@@ -1,0 +1,198 @@
+<div class="row">
+  <div class="col-xl-6 col-md-6 mb-100" style="height: 370px; ">
+    <div class="card   h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div style="color:black;padding-left:123px; font-size:28px;">
+            Injection Pressure
+          </div>
+        </div>
+        <div style="color:skyblue">
+          <hr class="sidebar-divider" />
+          <div [hidden]="!myVar"  >
+            <google-chart
+              #chart
+              [title]="title"
+              [type]="type"
+              [data]="data"
+              [columnNames]="columnNames"
+              [options]="options"
+              [width]="width"
+              [height]="height"
+            >
+            </google-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="col-xl-6 col-md-6 mb-100"  >
+  <div class="row">
+    <div class="col-xl-3" style="background-color: #D3D3D3; border-radius: 10px;">
+      
+      <div class="row" *ngIf = "OperationalState == 2 || OperationalState!=2" [ngClass] = "{operationalState: OperationalState == 2}">
+          <div class="col-xl-12" *ngIf = "OperationalState == 2 || OperationalState!=2" [ngClass] = "{operationalWhiteState: OperationalState == 2, operationalNonState: OperationalState!=2}">
+              Run
+          </div>
+      </div>
+      
+      <div class="row" *ngIf = "OperationalState == 0 || OperationalState!=0" [ngClass] = "{operationalState: OperationalState == 0}">
+          <div class="col-xl-12" *ngIf = "OperationalState == 0 || OperationalState!=0 " [ngClass] = "{operationalWhiteState: OperationalState == 0, operationalNonState: OperationalState!=0}">
+              Idle
+          </div>
+      </div>
+      <div class="row" *ngIf = "OperationalState == 4 || OperationalState!=4" [ngClass] = "{operationalState: OperationalState == 4}">
+          <div class="col-xl-12" *ngIf = "OperationalState == 4 || OperationalState!=4" [ngClass] = "{operationalWhiteState: OperationalState == 4, operationalNonState: OperationalState!=4}">
+              Fault
+          </div>
+      </div>
+    </div>
+    <div style="margin-left: 5px; margin-right:5px;">&nbsp;</div>
+    <div class="col-xl-3" style="background-color: #D3D3D3; border-radius: 10px;">
+      
+       <div *ngIf="modeOpen == 1">
+        <div class="row" style= "background-color: #4e73df; border-top-left-radius: 10px; border-top-right-radius: 10px;  padding-bottom: 22px;">
+            <div class="col-xl-12" style="color:white; padding: 10px; text-align: center; font-weight: bold;">
+                Mold Open
+            </div>
+        </div>
+           
+        <div class="row">
+            <div class="col-xl-12" style="color:black; padding: 10px; text-align: center; font-weight: bold;">
+              Mold Close
+            </div>
+        </div>     
+      </div>
+
+      <div *ngIf="modeOpen == 0">
+          <div class="row" style= "background-color: #4e73df; border-top-left-radius: 10px; border-top-right-radius: 10px;  padding-bottom: 22px;">
+              <div class="col-xl-12" style="color:white; padding: 10px; text-align: center; font-weight: bold;">
+                  Mold Close
+              </div>
+          </div>
+             
+          <div class="row">
+              <div class="col-xl-12" style="color:black; padding: 10px; text-align: center; font-weight: bold;">
+                Mold Open
+              </div>
+          </div>     
+        
+      </div>
+
+
+
+    </div> 
+
+
+
+
+
+      <div style="margin-left: 5px; margin-right:5px;">&nbsp;</div>
+    <div class="col-xl-3" style="background-color: #D3D3D3; border-radius: 10px;">
+      
+        <div class="row" style= "background-color: #4e73df; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+            <div class="col-xl-12" style="color:white; padding: 10px; text-align: center; font-weight: bold;">
+                Fill
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-xl-12" style="color:black; padding: 10px; text-align: center; font-weight: bold;">
+                Inject
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12" style="color:black; padding: 10px; text-align: center; font-weight: bold;">
+                Eject
+            </div>
+        </div>
+      </div>
+      
+  </div>
+  <div class="row">
+      &nbsp;
+  </div>
+  <div class="row" >
+      <div style="color: black;font-weight: bold;font-size: 24px;text-align: left">Total Cycle Count :  {{cycleCounter}}</div>
+  </div>
+  </div> 
+  
+
+  </div> 
+
+<div class="row">
+  <div class="col-xl-6 col-md-6 mb-100" style="height: 370px; " >
+    <div class="card   h-100 py-2"> 
+      <div class="card-body" >
+        <div class="row no-gutters align-items-center">
+          <div style="color:black;padding-left:123px; font-size:28px;">
+            Nozzle Temperature
+          </div>
+        </div>
+        <div style="color:skyblue">
+          <hr class="sidebar-divider" />
+          <div [hidden]="!myVar">
+            <google-chart
+              #chart
+              [title]="title1"
+              [type]="type1"
+              [data]="data1"
+              [columnNames]="columnNames1"
+              [options]="options1"
+              [width]="width1"
+              [height]="height1"
+            >
+            </google-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-6 col-md-6 mb-100" style="height: 370px; ">
+    <!-- <app-xyz></app-xyz> -->
+    <!--
+      start
+    -->
+    <div class="col-xl-12 col-md-12 mb-100 dmp-app" style=" margin:bottom:50px !important;">
+      <div class="card   h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center" style="color:black;font-weight:bold;margin-left: 131px;font-size:28px">
+              Vision System Control
+          </div>
+          <div style="color:skyblue">
+            <hr class="sidebar-divider" />
+              <div class="row col-xl-12">
+            <div class="col-xl-5">
+              <img src={{url}} alt="Loading..." height="150px" width="150px"/>
+            </div>
+            <div class="col-xl-7" style="margin-top: 30px;"> 
+            <table style="border:1px solid black;" cellpadding="10">
+              <tr>
+                <td style="background-color: #4e73df;color: white;font-weight: bold">Result</td>
+                <td style="background-color: #4e73df;color: white;font-weight: bold">Confidence</td>
+                <td style="background-color: #4e73df;color: white;font-weight: bold">Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              </tr>
+              <tr *ngFor="let data of cycle_cnt">
+                <td style="color: black;">{{data.result}}</td>
+                <td style="color: black;">{{data.confidence}}</td>
+                <td style="color: black;">{{data.timestamp}}</td>
+              </tr>
+              
+            </table>
+            </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+        <div style="color: maroon;font-weight: bold;font-size: 24px;text-align: left">{{message}}</div>
+    </div>
+    <!--
+      END
+    -->
+  </div>
+</div>
+

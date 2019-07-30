@@ -13,6 +13,8 @@ import {MatDatepickerModule, MatInputModule,MatNativeDateModule} from '@angular/
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { TreeviewModule } from 'ngx-treeview';
+import { MachineoperationComponent } from './machineoperation/machineoperation.component';
+import { XyzComponent } from './xyz/xyz.component';
 
 
 
@@ -21,9 +23,18 @@ const routes: Routes = [
     path: '',
     component: DashboardComponent
   },
+  
   {
     path: 'timeseries',
     component: TimeseriesComponent
+  },
+  {
+    path:'machineoperation',
+    component:MachineoperationComponent
+  },
+  {
+    path:"xyz",
+    component:XyzComponent
   },
   {
     path: '**',
@@ -39,7 +50,9 @@ const routes: Routes = [
     AppComponent,
     LoginComponent,
     TimeseriesComponent,
-    DashboardComponent
+    DashboardComponent,
+    MachineoperationComponent,
+    XyzComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+        "target": "https://login.microsoftonline.com/405992ab-4eb4-47b6-8c72-322cd532e984/oauth2/token",
+        "secure": false,
+        "changeOrigin": true
+    }
+}

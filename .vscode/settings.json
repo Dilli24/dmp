@@ -2,7 +2,7 @@
     "appService.zipIgnorePattern": [
         ".vscode{,/**}"
     ],
-    "appService.defaultWebAppToDeploy": "/subscriptions/263c50e8-3033-417d-9d7a-19bbf51eb9c0/resourceGroups/DMP-Solution/providers/Microsoft.Web/sites/pumpanalytics",
+    "appService.defaultWebAppToDeploy": "None",
     "appService.deploySubpath": "dist\\azureapp",
     "appService.showBuildDuringDeployPrompt": false
 }
